@@ -4,6 +4,12 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	// "fmt"
+
+	// "github.com/ctram/student_scores/student_scores_caller"
+	// "github.com/ctram/student_scores/student_score"
+	"github.com/ctram/student_scores/api"
 )
 
 var db = make(map[string]string)
@@ -59,7 +65,12 @@ func setupRouter() *gin.Engine {
 }
 
 func main() {
-	r := setupRouter()
+	r := api.SetupRouter()
+
+	// r := setupRouter()
 	// Listen and Server in 0.0.0.0:8080
 	r.Run(":8080")
+
+	// studentScores := map[string]student_score.StudentScore{}
+	// student_scores_caller.GetScores(studentScores);
 }
