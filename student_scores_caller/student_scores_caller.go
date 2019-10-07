@@ -25,10 +25,9 @@ func getScores(studentScoresMap map[string]student_score.StudentScore) (error) {
 
   reader := bufio.NewReader(resp.Body)
 
-
   var studentScore student_score.StudentScore
 
-  for {
+  for i := 0; i < 10; i++ {
     myByte, err := reader.ReadBytes('\n')
 
     if err != nil {
@@ -42,6 +41,8 @@ func getScores(studentScoresMap map[string]student_score.StudentScore) (error) {
       fmt.Println(studentScoresMap)
     }
   }
+
+  return err
 }
 
 func SetUpStudentScoresStore() (map[string]student_score.StudentScore) {
