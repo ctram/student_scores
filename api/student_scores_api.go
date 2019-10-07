@@ -7,9 +7,8 @@ import (
 )
 
 func SetupStudentScoresRouter(r *gin.Engine, studentScoresMap map[string]student_score.StudentScore) *gin.Engine {
-  // Ping test
 	r.GET("/students", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"message": "asd"})
+		c.JSON(http.StatusOK, gin.H{"studentScores": studentScoresMap })
 	})
 
 	return r
